@@ -2,12 +2,11 @@
 
 A full-stack **Healthcare Management System** built on the MERN-style architecture — connecting patients, doctors, and admins on a single secure platform.
 
-![Status](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/655e7c87-6169-4458-a6ff-8fcd067b3e5a" />
-)
-![Stack](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/596b27dc-b89e-4d47-8df4-85966fc8d0e2" />
-)
-![License](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9760a95b-73a4-438a-9b4d-56e550a50b42" />
-)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/655e7c87-6169-4458-a6ff-8fcd067b3e5a" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/596b27dc-b89e-4d47-8df4-85966fc8d0e2" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9760a95b-73a4-438a-9b4d-56e550a50b42" />
+
 
 ---
 
