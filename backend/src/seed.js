@@ -37,7 +37,7 @@ const seed = async () => {
   // Clear existing doctors, appointments, and patients to avoid duplications
   console.log("Cleaning up old doctors, patients, and appointments...");
   await Appointment.deleteMany({});
-  
+
   // Find users who are doctors or patients and delete them, and delete doctor profiles
   const usersToDelete = await User.find({ role: { $in: ["doctor", "patient"] } });
   const userIds = usersToDelete.map(u => u._id);
@@ -64,7 +64,7 @@ const seed = async () => {
   for (let i = 0; i < 10; i++) {
     const spec = doctorSpecs[i];
     const email = `doctor${i + 1}@careconnect.com`;
-    
+
     const userDoc = await User.create({
       fullName: spec.name,
       email: email,
@@ -138,7 +138,7 @@ const seed = async () => {
   let appointmentCount = 0;
   for (let i = 0; i < 10; i++) {
     const doctor = doctorsList[i];
-    
+
     // Choose two different slots
     const slot1 = timeSlots[i % timeSlots.length];
     const slot2 = timeSlots[(i + 4) % timeSlots.length];

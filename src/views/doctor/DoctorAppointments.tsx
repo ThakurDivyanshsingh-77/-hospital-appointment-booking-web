@@ -188,13 +188,13 @@ const DoctorAppointments = () => {
       </Card>
 
       <Dialog open={detailOpen} onOpenChange={setDetailOpen}>
-        <DialogContent className="max-w-lg">
-          <DialogHeader>
+        <DialogContent className="max-w-lg max-h-[90vh] flex flex-col p-0 overflow-hidden">
+          <DialogHeader className="p-6 pb-2 border-b border-slate-100">
             <DialogTitle>Appointment Details</DialogTitle>
             <DialogDescription>Review patient information and medical reports.</DialogDescription>
           </DialogHeader>
           {selected && (
-            <div className="space-y-4">
+            <div className="flex-1 overflow-y-auto p-6 space-y-4">
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="text-muted-foreground">Patient</p>
@@ -227,7 +227,7 @@ const DoctorAppointments = () => {
               {selected.notes && (
                 <div>
                   <p className="text-sm text-muted-foreground">Notes</p>
-                  <p className="mt-1 rounded-md bg-slate-50 p-3 text-sm text-slate-700">{selected.notes}</p>
+                  <p className="mt-1 rounded-lg bg-slate-50 p-3 text-sm text-slate-700 break-words whitespace-pre-wrap">{selected.notes}</p>
                 </div>
               )}
 

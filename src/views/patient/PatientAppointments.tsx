@@ -7,6 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { toast } from "sonner";
 import { Upload, FileText, Trash2, Loader2 } from "lucide-react";
 import { apiDownload, apiRequest } from "@/lib/api";
+import { FileUpload } from "@/components/application/file-upload/file-upload-base";
 
 const ALLOWED_TYPES = ["application/pdf", "image/jpeg", "image/png", "image/webp"];
 const MAX_SIZE = 10 * 1024 * 1024;
@@ -41,7 +42,10 @@ const PatientAppointments = () => {
   const [selectedAppointmentId, setSelectedAppointmentId] = useState<string | null>(null);
   const [reports, setReports] = useState<Report[]>([]);
   const [uploading, setUploading] = useState(false);
-  const fileRef = useRef<HTMLInputElement>(null);
+
+  // Track active uploads with progress/failure states
+  const [activeUploads, setActiveUploads] = useState<Record<string, { name: string; size: number; type: string; progress: number; failed?: boolean }>>({});
+  const fileObjectsRef = useRef<Record<string, File>>({});
 
   const fetchAppointments = async () => {
     const query = filter !== "all" ? `?status=${encodeURIComponent(filter)}` : "";
@@ -65,41 +69,113 @@ const PatientAppointments = () => {
     }
   };
 
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file || !selectedAppointmentId) {
-      return;
-    }
+  const uploadSingleFile = (tempId: string, file: File) => {
+    // Start mock progress updates
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress = Math.min(progress + Math.floor(Math.random() * 15) + 5, 95);
+      setActiveUploads((prev) => {
+        if (!prev[tempId] || prev[tempId].progress >= 100) return prev;
+        return {
+          ...prev,
+          [tempId]: { ...prev[tempId], progress }
+        };
+      });
+    }, 150);
 
-    if (!ALLOWED_TYPES.includes(file.type)) {
-      toast.error("Only PDF and image files (JPEG, PNG, WebP) are allowed.");
-      return;
-    }
-    if (file.size > MAX_SIZE) {
-      toast.error("File size must be under 10MB.");
-      return;
-    }
+    const formData = new FormData();
+    formData.append("file", file);
 
     setUploading(true);
-    try {
-      const formData = new FormData();
-      formData.append("file", file);
+    apiRequest(`/patient/appointments/${selectedAppointmentId}/reports`, {
+      method: "POST",
+      body: formData,
+    })
+      .then(() => {
+        clearInterval(interval);
+        setActiveUploads((prev) => ({
+          ...prev,
+          [tempId]: { ...prev[tempId], progress: 100 }
+        }));
+        toast.success(`Uploaded: ${file.name}`);
 
-      await apiRequest(`/patient/appointments/${selectedAppointmentId}/reports`, {
-        method: "POST",
-        body: formData,
+        // Refresh database reports
+        if (selectedAppointmentId) {
+          openReports(selectedAppointmentId).catch(() => { });
+        }
+
+        // Cleanup temp item after a brief delay
+        setTimeout(() => {
+          setActiveUploads((prev) => {
+            const copy = { ...prev };
+            delete copy[tempId];
+            return copy;
+          });
+          delete fileObjectsRef.current[tempId];
+        }, 1500);
+      })
+      .catch(() => {
+        clearInterval(interval);
+        setActiveUploads((prev) => ({
+          ...prev,
+          [tempId]: { ...prev[tempId], progress: 0, failed: true }
+        }));
+        toast.error(`Upload failed: ${file.name}`);
+      })
+      .finally(() => {
+        setUploading(false);
       });
+  };
 
-      toast.success("Report uploaded successfully!");
-      await openReports(selectedAppointmentId);
-    } catch (error) {
-      toast.error(getErrorMessage(error, "Upload failed"));
-    } finally {
-      setUploading(false);
-      if (fileRef.current) {
-        fileRef.current.value = "";
+  const handleDropFiles = (files: FileList) => {
+    if (!selectedAppointmentId) return;
+
+    Array.from(files).forEach((file) => {
+      if (!ALLOWED_TYPES.includes(file.type)) {
+        toast.error(`Only PDF, JPEG, PNG, and WebP are allowed. Skipped: ${file.name}`);
+        return;
       }
-    }
+      if (file.size > MAX_SIZE) {
+        toast.error(`File must be under 10MB. Skipped: ${file.name}`);
+        return;
+      }
+
+      const tempId = Math.random().toString();
+      fileObjectsRef.current[tempId] = file;
+
+      setActiveUploads((prev) => ({
+        ...prev,
+        [tempId]: {
+          name: file.name,
+          size: file.size,
+          type: file.type,
+          progress: 0,
+        }
+      }));
+
+      uploadSingleFile(tempId, file);
+    });
+  };
+
+  const handleRetryFile = (tempId: string) => {
+    const file = fileObjectsRef.current[tempId];
+    if (!file) return;
+
+    setActiveUploads((prev) => ({
+      ...prev,
+      [tempId]: { ...prev[tempId], progress: 0, failed: false }
+    }));
+
+    uploadSingleFile(tempId, file);
+  };
+
+  const handleDeleteActiveUpload = (tempId: string) => {
+    setActiveUploads((prev) => {
+      const copy = { ...prev };
+      delete copy[tempId];
+      return copy;
+    });
+    delete fileObjectsRef.current[tempId];
   };
 
   const deleteReport = async (report: Report) => {
@@ -168,7 +244,7 @@ const PatientAppointments = () => {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-3">
-                    <h3 className="font-semibold text-slate-900">{appointment.doctor?.fullName}</h3>
+                    <h3 className=" truncate w-48 font-semibold text-slate-900">{appointment.doctor?.fullName}</h3>
                     <span
                       className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium capitalize ${statusColor(appointment.status)}`}
                     >
@@ -208,54 +284,48 @@ const PatientAppointments = () => {
             <DialogDescription>Upload PDF or image files for this appointment.</DialogDescription>
           </DialogHeader>
 
-          <div className="space-y-4">
-            <label className="flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed border-violet-300 bg-violet-50/60 p-6 transition hover:border-violet-500">
-              {uploading ? <Loader2 className="h-8 w-8 animate-spin text-violet-600" /> : <Upload className="h-8 w-8 text-violet-600" />}
-              <span className="text-sm font-medium text-slate-900">{uploading ? "Uploading..." : "Click to upload a file"}</span>
-              <span className="text-xs text-slate-500">PDF, JPEG, PNG, WebP (max 10MB)</span>
-              <input
-                ref={fileRef}
-                type="file"
-                accept=".pdf,.jpg,.jpeg,.png,.webp"
-                className="hidden"
-                onChange={handleUpload}
-                disabled={uploading}
-              />
-            </label>
+          <FileUpload.Root>
+            <FileUpload.DropZone
+              isDisabled={uploading}
+              onDropFiles={handleDropFiles}
+            />
 
-            {reports.length === 0 ? (
-              <p className="text-center text-sm text-slate-500">No reports uploaded yet.</p>
-            ) : (
-              <div className="space-y-2">
-                {reports.map((report) => (
-                  <div key={report.id} className="flex items-center justify-between rounded-lg border border-slate-200 p-3">
-                    <div className="flex items-center gap-3 overflow-hidden">
-                      <FileText className="h-5 w-5 shrink-0 text-violet-600" />
-                      <div className="min-w-0">
-                        <p className="truncate text-sm font-medium text-slate-900">{report.fileName}</p>
-                        <p className="text-xs text-slate-500">
-                          {formatSize(report.fileSize)} - {new Date(report.createdAt).toLocaleDateString()}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex gap-1">
-                      <Button size="sm" variant="ghost" onClick={() => downloadReport(report)}>
-                        View
-                      </Button>
-                      <Button
-                        size="icon"
-                        variant="ghost"
-                        className="text-destructive hover:bg-destructive/10"
-                        onClick={() => deleteReport(report)}
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+            <FileUpload.List>
+              {/* Active / In-progress / Failed Uploads */}
+              {Object.entries(activeUploads).map(([tempId, file]) => (
+                <FileUpload.ListItemProgressBar
+                  key={tempId}
+                  id={tempId}
+                  name={file.name}
+                  type={file.type}
+                  size={file.size}
+                  progress={file.progress}
+                  failed={file.failed}
+                  onDelete={() => handleDeleteActiveUpload(tempId)}
+                  onRetry={() => handleRetryFile(tempId)}
+                />
+              ))}
+
+              {/* Already uploaded reports from database */}
+              {reports.map((report) => (
+                <FileUpload.ListItemProgressBar
+                  key={report.id}
+                  id={report.id}
+                  name={report.fileName}
+                  type={report.fileType}
+                  size={report.fileSize}
+                  progress={100}
+                  onDelete={() => deleteReport(report)}
+                  onRetry={() => { }}
+                  onView={() => downloadReport(report)}
+                />
+              ))}
+
+              {reports.length === 0 && Object.keys(activeUploads).length === 0 && (
+                <p className="text-center text-sm text-slate-500 py-6">No reports uploaded yet.</p>
+              )}
+            </FileUpload.List>
+          </FileUpload.Root>
         </DialogContent>
       </Dialog>
     </PatientLayout>

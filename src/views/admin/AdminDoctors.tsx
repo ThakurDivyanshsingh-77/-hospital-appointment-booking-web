@@ -258,7 +258,7 @@ const AdminDoctors = () => {
                   Add Doctor
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-xl">
+              <DialogContent className="max-w-xl" aria-describedby={undefined}>
                 <DialogHeader>
                   <DialogTitle>{editing ? "Edit Doctor" : "Add New Doctor"}</DialogTitle>
                 </DialogHeader>

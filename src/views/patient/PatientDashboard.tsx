@@ -245,9 +245,9 @@ const PatientDashboard = () => {
             )}
 
             {/* Need a new appointment banner */}
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border-2 border-dashed border-violet-200 bg-violet-50/30 p-5">
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border-2 border-dashed border-teal-200 bg-teal-50/10 p-5">
               <div className="flex items-center gap-3.5 text-center sm:text-left flex-col sm:flex-row">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700 shadow-sm shrink-0">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-100/55 text-teal-800 shadow-sm shrink-0">
                   <CalendarPlus className="h-6 w-6" />
                 </div>
                 <div>
@@ -256,7 +256,7 @@ const PatientDashboard = () => {
                 </div>
               </div>
               <Link to="/patient/book">
-                <Button className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold text-sm rounded-xl px-5 py-2.5 shadow-md shadow-violet-500/15">
+                <Button className="bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white font-semibold text-sm rounded-xl px-5 py-2.5 shadow-md shadow-teal-500/15">
                   Book New Appointment
                 </Button>
               </Link>
@@ -266,7 +266,7 @@ const PatientDashboard = () => {
           {/* Your Health at a Glance Card */}
           <Card className="border-slate-100 bg-white p-6 shadow-sm">
             <h3 className="text-md font-bold text-slate-900 flex items-center gap-2 mb-6">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-teal-50 text-teal-600">
                 <Sparkles className="h-4 w-4" />
               </span>
               Your Health at a Glance
@@ -281,7 +281,7 @@ const PatientDashboard = () => {
               <div className="rounded-2xl border border-slate-100 bg-slate-50/50 p-4">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Next Appointment</p>
                 <p className="text-sm font-extrabold text-slate-800 mt-2">6 Jul 2026</p>
-                <p className="text-[10px] text-violet-600 font-bold mt-0.5">In 5 days</p>
+                <p className="text-[10px] text-teal-600 font-bold mt-0.5">In 5 days</p>
               </div>
               <div className="rounded-2xl border border-slate-100 bg-slate-50/50 p-4">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Prescriptions</p>

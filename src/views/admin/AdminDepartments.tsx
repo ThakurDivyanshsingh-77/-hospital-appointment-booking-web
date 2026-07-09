@@ -171,7 +171,7 @@ const AdminDepartments = () => {
                   Add Department
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-lg">
+              <DialogContent className="max-w-lg" aria-describedby={undefined}>
                 <DialogHeader>
                   <DialogTitle>{editing ? "Edit Department" : "Add Department"}</DialogTitle>
                 </DialogHeader>
