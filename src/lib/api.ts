@@ -14,7 +14,7 @@ export interface ApiErrorPayload {
   error?: string;
 }
 
-const API_BASE = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API_BASE = (process.env.NEXT_PUBLIC_API_URL || "https://hospital-appointment-booking-web.onrender.com/api").replace(/\/$/, "");
 const TOKEN_STORAGE_KEY = "careconnect_auth_token";
 
 export const getApiBaseUrl = () => API_BASE;
