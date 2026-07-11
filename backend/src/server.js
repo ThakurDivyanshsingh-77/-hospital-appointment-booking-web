@@ -18,18 +18,18 @@ const defaultDepartments = require("./data/defaultDepartments");
 const app = express();
 const port = Number(process.env.PORT || 5000);
 const BACKEND_ROOT = path.resolve(__dirname, "..");
+const DEFAULT_ALLOWED_ORIGINS = [
+  "https://careconnectff.netlify.app",
+  "https://agent-6a520be081a681ca06ee310c--careconnectff.netlify.app",
+  "http://localhost:5173",
+  "http://localhost:8080",
+  "http://127.0.0.1:8080",
+];
 
 const parseAllowedOrigins = () => {
   const raw = String(process.env.CLIENT_URL || "").trim();
-  if (!raw) {
-    return [
-      "https://agent-6a520be081a681ca06ee310c--careconnectff.netlify.app",
-      "http://localhost:5173",
-      "http://localhost:8080",
-      "http://127.0.0.1:8080",
-    ];
-  }
-  return raw.split(",").map((item) => item.trim()).filter(Boolean);
+  const envOrigins = raw.split(",").map((item) => item.trim()).filter(Boolean);
+  return Array.from(new Set([...DEFAULT_ALLOWED_ORIGINS, ...envOrigins]));
 };
 
 app.use(
