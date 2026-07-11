@@ -22,6 +22,7 @@ import CareersPage from "./views/CareersPage";
 import GalleryPage from "./views/GalleryPage";
 import HealthPackagesPage from "./views/HealthPackagesPage";
 import TestimonialsPage from "./views/TestimonialsPage";
+import ProjectBriefPage from "./views/ProjectBriefPage";
 import AdminDashboard from "./views/admin/AdminDashboard";
 import AdminDoctors from "./views/admin/AdminDoctors";
 import AdminAppointments from "./views/admin/AdminAppointments";
@@ -75,6 +76,7 @@ const App = () => (
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/health-packages" element={<HealthPackagesPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/project-brief" element={<ProjectBriefPage />} />
             <Route path="/login" element={<LoginPage />} />
             {/* Admin routes */}
             <Route path="/admin" element={<ProtectedRoute requiredRole="admin"><AdminDashboard /></ProtectedRoute>} />

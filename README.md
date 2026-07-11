@@ -81,7 +81,7 @@ Update `backend/.env` with the following:
 |---|---|
 | `MONGO_URI` | Your MongoDB connection string |
 | `JWT_SECRET` | Any secure random secret string |
-| `CLIENT_URL` | Allowed frontend origins (default: `http://localhost:8080,http://127.0.0.1:8080,http://localhost:5173`) |
+| `CLIENT_URL` | Allowed frontend origins (default: `https://agent-6a520be081a681ca06ee310c--careconnectff.netlify.app,http://localhost:8080,http://127.0.0.1:8080,http://localhost:5173`) |
 | `SEED_ADMIN_EMAIL` | *(optional)* Default admin email |
 | `SEED_ADMIN_PASSWORD` | *(optional)* Default admin password |
 | `SEED_ADMIN_NAME` | *(optional)* Default admin name |
@@ -103,7 +103,7 @@ npm install
 Ensure your root `.env` contains:
 
 ```env
-NEXT_PUBLIC_API_URL="http://localhost:5000/api"
+NEXT_PUBLIC_API_URL="https://hospital-appointment-booking-web.onrender.com/api"
 ```
 
 Run the frontend:

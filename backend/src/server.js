@@ -22,7 +22,12 @@ const BACKEND_ROOT = path.resolve(__dirname, "..");
 const parseAllowedOrigins = () => {
   const raw = String(process.env.CLIENT_URL || "").trim();
   if (!raw) {
-    return ["http://localhost:5173", "http://localhost:8080", "http://127.0.0.1:8080"];
+    return [
+      "https://agent-6a520be081a681ca06ee310c--careconnectff.netlify.app",
+      "http://localhost:5173",
+      "http://localhost:8080",
+      "http://127.0.0.1:8080",
+    ];
   }
   return raw.split(",").map((item) => item.trim()).filter(Boolean);
 };

@@ -27,6 +27,7 @@ const navLinks: NavLink[] = [
       { label: "Director's Desk", path: "/directors-desk", description: "Message from leadership" },
       { label: "Academics", path: "/academics", description: "Training and learning programs" },
       { label: "Careers", path: "/careers", description: "Current opportunities and hiring" },
+      { label: "Project Brief", path: "/project-brief", description: "Roles, workflow, features, and stack" },
     ],
   },
   {
