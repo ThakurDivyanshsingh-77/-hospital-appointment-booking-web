@@ -196,7 +196,7 @@ const AdminDoctors = () => {
           <Card className="border-slate-200/80 bg-white/90 p-5 shadow-sm">
             <div className="flex items-center justify-between">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Active</p>
-              <UserCheck className="h-4 w-4 text-violet-600" />
+              <UserCheck className="h-4 w-4 text-blue-600" />
             </div>
             <p className="mt-2 text-3xl font-bold text-slate-900">{activeCount}</p>
             <p className="mt-1 text-xs text-slate-500">Available for bookings</p>
@@ -212,7 +212,7 @@ const AdminDoctors = () => {
           <Card className="border-slate-200/80 bg-white/90 p-5 shadow-sm">
             <div className="flex items-center justify-between">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Unassigned</p>
-              <Building2 className="h-4 w-4 text-purple-600" />
+              <Building2 className="h-4 w-4 text-blue-600" />
             </div>
             <p className="mt-2 text-3xl font-bold text-slate-900">{noDepartmentCount}</p>
             <p className="mt-1 text-xs text-slate-500">No department linked</p>
@@ -253,7 +253,7 @@ const AdminDoctors = () => {
               }}
             >
               <DialogTrigger asChild>
-                <Button className="h-10 gap-2 rounded-xl bg-violet-600 text-white hover:bg-violet-700">
+                <Button className="h-10 gap-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700">
                   <Plus className="h-4 w-4" />
                   Add Doctor
                 </Button>
@@ -346,7 +346,7 @@ const AdminDoctors = () => {
 
                   <Button
                     type="submit"
-                    className="w-full rounded-xl bg-violet-600 text-white hover:bg-violet-700"
+                    className="w-full rounded-xl bg-blue-600 text-white hover:bg-blue-700"
                     disabled={submitting}
                   >
                     {submitting ? "Saving..." : editing ? "Update Doctor" : "Add Doctor"}
@@ -380,7 +380,7 @@ const AdminDoctors = () => {
                         <p className="text-xs text-slate-500">{doctor.email}</p>
                       </div>
                       <Badge
-                        className={doctor.isActive ? "bg-violet-100 text-violet-700" : "bg-rose-100 text-rose-700"}
+                        className={doctor.isActive ? "bg-blue-100 text-blue-700" : "bg-rose-100 text-rose-700"}
                       >
                         {doctor.isActive ? "Active" : "Inactive"}
                       </Badge>

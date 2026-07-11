@@ -49,7 +49,7 @@ const AdminLayout = ({ children, title, subtitle }: AdminLayoutProps) => {
     <SidebarProvider>
       <div className="relative flex min-h-screen w-full overflow-hidden bg-slate-50">
         {/* Background blobs */}
-        <div className="pointer-events-none absolute -left-20 -top-24 h-96 w-96 rounded-full bg-violet-200/20 blur-3xl" />
+        <div className="pointer-events-none absolute -left-20 -top-24 h-96 w-96 rounded-full bg-blue-200/20 blur-3xl" />
         <div className="pointer-events-none absolute -right-16 top-24 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl" />
 
         <AdminSidebar />
@@ -76,7 +76,7 @@ const AdminLayout = ({ children, title, subtitle }: AdminLayoutProps) => {
                 <input
                   type="text"
                   placeholder="Search anything..."
-                  className="h-10 w-60 rounded-xl border border-slate-200 pl-10 pr-12 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-500/10 focus:border-violet-500 bg-slate-50/50"
+                  className="h-10 w-60 rounded-xl border border-slate-200 pl-10 pr-12 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 bg-slate-50/50"
                 />
                 <span className="absolute right-3 rounded bg-white border border-slate-200 px-1.5 py-0.5 text-[9px] font-semibold text-slate-450 tracking-wider">
                   Ctrl+K
@@ -95,13 +95,13 @@ const AdminLayout = ({ children, title, subtitle }: AdminLayoutProps) => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-2 text-left shadow-sm hover:bg-slate-50 transition-all">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-600 text-white font-bold text-sm">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white font-bold text-sm">
                       {getInitials(user?.fullName)}
                     </div>
                     <div className="hidden md:block pr-1">
                       <div className="flex items-center gap-1.5">
                         <p className="text-xs font-bold text-slate-900">{user?.fullName || "Administrator"}</p>
-                        <span className="rounded bg-violet-100 px-1.5 py-0.5 text-[9px] font-bold text-violet-700 uppercase">
+                        <span className="rounded bg-blue-100 px-1.5 py-0.5 text-[9px] font-bold text-blue-700 uppercase">
                           Super Admin
                         </span>
                       </div>
@@ -115,10 +115,10 @@ const AdminLayout = ({ children, title, subtitle }: AdminLayoutProps) => {
                     Operations
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator className="bg-slate-100" />
-                  <DropdownMenuItem asChild className="rounded-xl px-3 py-2 text-sm focus:bg-violet-50 focus:text-violet-900 cursor-pointer">
+                  <DropdownMenuItem asChild className="rounded-xl px-3 py-2 text-sm focus:bg-blue-50 focus:text-blue-900 cursor-pointer">
                     <Link to="/admin/settings">System Settings</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className="rounded-xl px-3 py-2 text-sm focus:bg-violet-50 focus:text-violet-900 cursor-pointer">
+                  <DropdownMenuItem asChild className="rounded-xl px-3 py-2 text-sm focus:bg-blue-50 focus:text-blue-900 cursor-pointer">
                     <Link to="/admin/reports">Usage Logs</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator className="bg-slate-100" />
@@ -148,7 +148,7 @@ const AdminLayout = ({ children, title, subtitle }: AdminLayoutProps) => {
               </button>
 
               {/* Export Report Action */}
-              <button className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 px-4 py-2 text-xs font-bold text-white shadow-md shadow-violet-500/10 transition-all">
+              <button className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-4 py-2 text-xs font-bold text-white shadow-md shadow-blue-500/10 transition-all">
                 <Download className="h-4 w-4" />
                 <span>Export Report</span>
               </button>

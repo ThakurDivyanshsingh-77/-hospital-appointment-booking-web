@@ -90,7 +90,7 @@ const AdminSidebar = () => {
       <SidebarHeader className="p-2">
         <div className="rounded-2xl border border-slate-100 bg-white p-3 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-600 text-white shadow-md shadow-violet-500/20">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md shadow-blue-500/20">
               <ShieldPlus className="h-5 w-5" />
             </div>
             {!collapsed && (
@@ -102,8 +102,8 @@ const AdminSidebar = () => {
           </div>
 
           {!collapsed && (
-            <div className="mt-3 flex items-center gap-2 rounded-xl bg-emerald-50 px-2.5 py-2 text-xs font-semibold text-emerald-700">
-              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+            <div className="mt-3 flex items-center gap-2 rounded-xl bg-blue-50 px-2.5 py-2 text-xs font-semibold text-blue-700">
+              <CheckCircle2 className="h-3.5 w-3.5 text-blue-600 shrink-0" />
               <span>5 modules connected</span>
             </div>
           )}
@@ -123,10 +123,10 @@ const AdminSidebar = () => {
                     <NavLink
                       to={item.url}
                       end={item.url === "/admin"}
-                      className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-slate-600 transition-all hover:bg-violet-50/70 hover:text-violet-800"
-                      activeClassName="bg-violet-100/70 font-semibold text-violet-900 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.15)]"
+                      className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-slate-600 transition-all hover:bg-blue-50/70 hover:text-blue-800"
+                      activeClassName="bg-blue-100/70 font-semibold text-blue-900 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.15)]"
                     >
-                      <item.icon className="h-4.5 w-4.5 shrink-0 text-slate-500 group-data-[active=true]:text-violet-700" />
+                      <item.icon className="h-4.5 w-4.5 shrink-0 text-slate-500 group-data-[active=true]:text-blue-700" />
                       <div className="flex flex-1 items-center justify-between min-w-0 group-data-[collapsible=icon]:hidden">
                         <div className="min-w-0">
                           <p className="truncate text-sm font-medium">{item.title}</p>
@@ -144,13 +144,13 @@ const AdminSidebar = () => {
 
       <SidebarFooter className="p-2 gap-3">
         {!collapsed && (
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-600 p-4 text-white shadow-md shadow-violet-500/10">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 p-4 text-white shadow-md shadow-blue-500/10">
             <div className="relative z-10">
               <p className="text-sm font-bold">Need Help?</p>
-              <p className="text-[10px] text-violet-100 mt-1 leading-normal">
+              <p className="text-[10px] text-blue-100 mt-1 leading-normal">
                 System status is optimal. All systems running smoothly.
               </p>
-              <button className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-center text-xs font-bold text-violet-700 transition-all hover:bg-violet-50 shadow-sm">
+              <button className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-center text-xs font-bold text-blue-700 transition-all hover:bg-blue-50 shadow-sm">
                 <span>View System Status</span>
                 <ArrowRight className="h-3 w-3" />
               </button>

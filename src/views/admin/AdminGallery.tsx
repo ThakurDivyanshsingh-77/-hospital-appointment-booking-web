@@ -131,9 +131,9 @@ const AdminGallery = () => {
           <Card className="border-slate-200/80 bg-white/90 p-5 shadow-sm">
             <div className="flex items-center justify-between">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Visible</p>
-              <Eye className="h-4 w-4 text-violet-600" />
+              <Eye className="h-4 w-4 text-blue-600" />
             </div>
-            <p className="mt-2 text-3xl font-bold text-violet-700">{visibleCount}</p>
+            <p className="mt-2 text-3xl font-bold text-blue-700">{visibleCount}</p>
             <p className="mt-1 text-xs text-slate-500">Live on public gallery</p>
           </Card>
           <Card className="border-slate-200/80 bg-white/90 p-5 shadow-sm">
@@ -187,7 +187,7 @@ const AdminGallery = () => {
               </p>
             </div>
 
-            <Button type="submit" className="h-10 gap-2 rounded-xl bg-violet-600 text-white hover:bg-violet-700" disabled={uploading}>
+            <Button type="submit" className="h-10 gap-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700" disabled={uploading}>
               <ImagePlus className="h-4 w-4" />
               {uploading ? "Uploading..." : "Upload Image"}
             </Button>
@@ -218,7 +218,7 @@ const AdminGallery = () => {
                   <img src={toImageSrc(item)} alt={item.title} className="h-52 w-full object-cover" loading="lazy" />
                   <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/60 to-transparent px-3 py-2">
                     <p className="truncate text-sm font-medium text-white">{item.title || "Untitled image"}</p>
-                    <Badge variant="secondary" className={item.isActive ? "bg-violet-100 text-violet-700" : "bg-rose-100 text-rose-700"}>
+                    <Badge variant="secondary" className={item.isActive ? "bg-blue-100 text-blue-700" : "bg-rose-100 text-rose-700"}>
                       {item.isActive ? "Visible" : "Hidden"}
                     </Badge>
                   </div>

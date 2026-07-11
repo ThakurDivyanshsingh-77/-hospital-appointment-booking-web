@@ -153,7 +153,7 @@ const AdminDashboard = () => {
       label: "Doctors",
       value: stats.totalDoctors,
       icon: Users,
-      color: "text-violet-600 bg-violet-50/70 border-violet-100",
+      color: "text-blue-600 bg-blue-50/70 border-blue-100",
       meta: "Registered specialists",
       link: "/admin/doctors",
     },
@@ -169,7 +169,7 @@ const AdminDashboard = () => {
       label: "Departments",
       value: stats.totalDepartments,
       icon: Building2,
-      color: "text-emerald-600 bg-emerald-50/70 border-emerald-100",
+      color: "text-blue-600 bg-blue-50/70 border-blue-100",
       meta: "Operational units",
       link: "/admin/departments",
     },
@@ -188,7 +188,7 @@ const AdminDashboard = () => {
   const statusColor = (status: string) => {
     switch (status) {
       case "accepted":
-        return "bg-emerald-50 border-emerald-100 text-emerald-700";
+        return "bg-blue-50 border-blue-100 text-blue-700";
       case "rejected":
       case "cancelled":
         return "bg-rose-50 border-rose-100 text-rose-700";
@@ -213,19 +213,19 @@ const AdminDashboard = () => {
         {/* Banner Section */}
         <div className="grid gap-4 lg:grid-cols-3">
           {/* Operations Pulse Banner */}
-          <Card className="relative overflow-hidden border-slate-100 bg-gradient-to-r from-violet-600 to-indigo-600 p-6 shadow-sm lg:col-span-2 text-white flex justify-between">
+          <Card className="relative overflow-hidden border-slate-100 bg-gradient-to-r from-blue-600 to-indigo-600 p-6 shadow-sm lg:col-span-2 text-white flex justify-between">
             <div className="relative z-10 flex flex-col justify-between max-w-[55%]">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-wider text-violet-100">Operations Pulse</p>
+                <p className="text-[10px] font-bold uppercase tracking-wider text-blue-100">Operations Pulse</p>
                 <h2 className="text-xl font-extrabold leading-tight mt-3">
                   Keep clinical operations balanced with live appointment and staffing insights.
                 </h2>
-                <p className="mt-2 text-xs text-violet-100 font-medium leading-relaxed">
+                <p className="mt-2 text-xs text-blue-100 font-medium leading-relaxed">
                   Monitor trends, identify bottlenecks, and move quickly on pending requests from a single admin hub.
                 </p>
               </div>
               <div className="mt-6 flex items-center gap-3">
-                <button className="rounded-xl bg-white px-4 py-2 text-xs font-bold text-violet-700 shadow-sm hover:bg-violet-50 transition-colors">
+                <button className="rounded-xl bg-white px-4 py-2 text-xs font-bold text-blue-700 shadow-sm hover:bg-blue-50 transition-colors">
                   Real-time Dashboard
                 </button>
                 <button className="rounded-xl border border-white/30 px-4 py-2 text-xs font-bold text-white hover:bg-white/10 transition-colors">
@@ -272,7 +272,7 @@ const AdminDashboard = () => {
                   <p className="text-4xl font-black text-slate-900 tracking-tight">{completionRate}%</p>
                   <p className="text-xs text-slate-500 font-semibold mt-1">Accepted bookings rate</p>
                 </div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
                   <TrendingUp className="h-5 w-5" />
                 </div>
               </div>
@@ -280,14 +280,14 @@ const AdminDashboard = () => {
               {/* Progress bar */}
               <div className="mt-6 h-2 w-full rounded-full bg-slate-100">
                 <div
-                  className="h-2 rounded-full bg-violet-600 transition-all duration-500"
+                  className="h-2 rounded-full bg-blue-600 transition-all duration-500"
                   style={{ width: `${completionRate}%` }}
                 />
               </div>
             </div>
 
             <div className="mt-4 flex items-center justify-between border-t border-slate-50 pt-4 text-xs font-semibold text-slate-500">
-              <span className="flex items-center gap-1.5 text-violet-700">
+              <span className="flex items-center gap-1.5 text-blue-700">
                 <Activity className="h-3.5 w-3.5 shrink-0" />
                 {acceptedCount} accepted appointments out of {stats.totalAppointments}
               </span>
@@ -314,7 +314,7 @@ const AdminDashboard = () => {
                 </div>
               </div>
 
-              <Link to={item.link} className="text-slate-400 hover:text-violet-600 transition-colors">
+              <Link to={item.link} className="text-slate-400 hover:text-blue-600 transition-colors">
                 <span className="flex items-center gap-1 text-[10px] font-bold">
                   View all
                   <ArrowUpRight className="h-3.5 w-3.5" />
@@ -391,7 +391,7 @@ const AdminDashboard = () => {
               {/* Legends Row */}
               <div className="flex justify-center items-center gap-4 text-[10px] font-bold text-slate-600 border-t border-slate-50 pt-3">
                 <span className="flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-violet-600" />
+                  <span className="h-2 w-2 rounded-full bg-blue-600" />
                   Accepted ({acceptedCount})
                 </span>
                 <span className="flex items-center gap-1.5">
@@ -446,7 +446,7 @@ const AdminDashboard = () => {
               <p className="text-[10px] text-slate-400 font-semibold mt-0.5">Latest patient bookings for quick review</p>
             </div>
             <Link to="/admin/appointments">
-              <Button size="sm" variant="outline" className="text-xs border-violet-200 text-violet-700 hover:bg-violet-50">
+              <Button size="sm" variant="outline" className="text-xs border-blue-200 text-blue-700 hover:bg-blue-50">
                 View All Records
               </Button>
             </Link>
@@ -505,7 +505,7 @@ const AdminDashboard = () => {
                         {/* Patient info details */}
                         <td className="py-3.5">
                           <div className="flex items-center gap-3">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-violet-100 text-violet-700 font-bold text-[11px]">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-[11px]">
                               {getInitials(appointment.patient?.fullName)}
                             </div>
                             <div>
@@ -544,10 +544,10 @@ const AdminDashboard = () => {
                         {/* Actions details */}
                         <td className="py-3.5 text-right">
                           <div className="inline-flex items-center gap-2">
-                            <button className="flex h-7 w-7 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 hover:text-violet-700 hover:border-violet-200 transition-colors shadow-sm">
+                            <button className="flex h-7 w-7 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 hover:text-blue-700 hover:border-blue-200 transition-colors shadow-sm">
                               <Eye className="h-3.5 w-3.5" />
                             </button>
-                            <button className="flex h-7 w-7 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 hover:text-violet-700 hover:border-violet-200 transition-colors shadow-sm">
+                            <button className="flex h-7 w-7 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 hover:text-blue-700 hover:border-blue-200 transition-colors shadow-sm">
                               <MoreVertical className="h-3.5 w-3.5" />
                             </button>
                           </div>
@@ -565,7 +565,7 @@ const AdminDashboard = () => {
                   <button className="flex h-7 w-7 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 hover:bg-slate-50 transition-colors disabled:opacity-50" disabled>
                     <ChevronLeft className="h-3.5 w-3.5" />
                   </button>
-                  <button className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-600 font-bold text-white shadow-sm">
+                  <button className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600 font-bold text-white shadow-sm">
                     1
                   </button>
                   <button className="flex h-7 w-7 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 hover:bg-slate-50 transition-colors disabled:opacity-50" disabled>

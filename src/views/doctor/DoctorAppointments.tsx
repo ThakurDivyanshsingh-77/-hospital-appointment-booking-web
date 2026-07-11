@@ -91,9 +91,9 @@ const DoctorAppointments = () => {
   };
 
   const statusColor = (status: string) => {
-    if (status === "accepted") return "bg-violet-100 text-violet-700";
+    if (status === "accepted") return "bg-blue-100 text-blue-700";
     if (status === "rejected" || status === "cancelled") return "bg-destructive/10 text-destructive";
-    return "bg-purple-100 text-purple-700";
+    return "bg-blue-100 text-blue-700";
   };
 
   const formatSize = (bytes: number) => {
@@ -162,7 +162,7 @@ const DoctorAppointments = () => {
                             <Button
                               size="icon"
                               variant="ghost"
-                              className="text-violet-600 hover:bg-violet-50"
+                              className="text-blue-600 hover:bg-blue-50"
                               onClick={() => updateStatus(appointment.id, "accepted")}
                             >
                               <CheckCircle className="h-4 w-4" />
@@ -243,7 +243,7 @@ const DoctorAppointments = () => {
                       {reports.map((report) => (
                         <div key={report.id} className="flex items-center justify-between rounded-lg border border-slate-200 p-3">
                           <div className="flex items-center gap-3 overflow-hidden">
-                            <FileText className="h-5 w-5 shrink-0 text-violet-600" />
+                            <FileText className="h-5 w-5 shrink-0 text-blue-600" />
                             <div className="min-w-0">
                               <p className="truncate text-sm font-medium text-slate-900">{report.fileName}</p>
                               <p className="text-xs text-slate-500">
@@ -264,7 +264,7 @@ const DoctorAppointments = () => {
               {selected.status === "pending" && (
                 <div className="flex gap-2 pt-2">
                   <Button
-                    className="flex-1 bg-violet-600 hover:bg-violet-700"
+                    className="flex-1 bg-blue-600 hover:bg-blue-700"
                     onClick={() => updateStatus(selected.id, "accepted")}
                   >
                     <CheckCircle className="mr-2 h-4 w-4" /> Accept

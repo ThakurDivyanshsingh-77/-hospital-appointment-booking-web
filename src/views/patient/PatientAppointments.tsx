@@ -204,8 +204,8 @@ const PatientAppointments = () => {
   };
 
   const statusColor = (status: string) => {
-    if (status === "accepted") return "border-violet-200 bg-violet-100 text-violet-700";
-    if (status === "pending") return "border-purple-200 bg-purple-100 text-purple-700";
+    if (status === "accepted") return "border-blue-200 bg-blue-100 text-blue-700";
+    if (status === "pending") return "border-blue-200 bg-blue-100 text-blue-700";
     return "border-destructive/20 bg-destructive/10 text-destructive";
   };
 
@@ -263,10 +263,10 @@ const PatientAppointments = () => {
                 <div className="flex items-center gap-3">
                   <div className="text-right">
                     <p className="text-sm font-medium text-slate-900">{appointment.appointmentDate}</p>
-                    <p className="text-sm text-violet-700">{appointment.timeSlot}</p>
+                    <p className="text-sm text-blue-700">{appointment.timeSlot}</p>
                   </div>
                   {appointment.status === "accepted" && (
-                    <Button size="sm" variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50" onClick={() => openReports(appointment.id)}>
+                    <Button size="sm" variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50" onClick={() => openReports(appointment.id)}>
                       <Upload className="mr-1.5 h-3.5 w-3.5" /> Reports
                     </Button>
                   )}

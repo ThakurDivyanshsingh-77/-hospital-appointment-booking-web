@@ -89,13 +89,13 @@ const DoctorAvailability = () => {
                     className={`flex items-center justify-between rounded-lg border px-3 py-2 text-sm ${
                       booked
                         ? "border-red-200 bg-red-50/40 opacity-60 cursor-not-allowed select-none"
-                        : "border-emerald-200 bg-emerald-50/40 text-emerald-800"
+                        : "border-blue-200 bg-blue-50/40 text-blue-800"
                     }`}
                   >
                     <span className="font-medium text-slate-900">{slot}</span>
                     <Badge
                       className={`text-[10px] ${
-                        booked ? "bg-red-100 text-red-700 hover:bg-red-100" : "bg-emerald-100 text-emerald-700 hover:bg-emerald-100"
+                        booked ? "bg-red-100 text-red-700 hover:bg-red-100" : "bg-blue-100 text-blue-700 hover:bg-blue-100"
                       }`}
                     >
                       {booked ? "Booked" : "Free"}

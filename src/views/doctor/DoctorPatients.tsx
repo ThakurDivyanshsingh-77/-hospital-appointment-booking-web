@@ -58,7 +58,7 @@ const DoctorPatients = () => {
               placeholder="Search patients by name or email..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="pl-10 border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-violet-500"
+              className="pl-10 border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-blue-500"
             />
           </div>
           <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-500 shadow-sm shrink-0 w-fit">
@@ -71,7 +71,7 @@ const DoctorPatients = () => {
         <Card className="border-slate-200/80 bg-white shadow-sm rounded-2xl overflow-hidden">
           <CardHeader className="border-b border-slate-100 bg-slate-50/30 p-5">
             <CardTitle className="text-base font-bold text-slate-800 flex items-center gap-2">
-              <Users className="h-5 w-5 text-violet-500" /> Patient Registry
+              <Users className="h-5 w-5 text-blue-500" /> Patient Registry
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
@@ -100,7 +100,7 @@ const DoctorPatients = () => {
                         <tr key={patient.id} className="hover:bg-slate-50/30 transition-colors text-sm text-slate-600">
                           <td className="px-6 py-4 font-medium">
                             <div className="flex items-center gap-3">
-                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-700 font-extrabold text-sm shadow-sm">
+                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700 font-extrabold text-sm shadow-sm">
                                 {initial}
                               </div>
                               <div>
@@ -120,7 +120,7 @@ const DoctorPatients = () => {
                             </div>
                           </td>
                           <td className="px-6 py-4">
-                            <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2.5 py-0.5 text-xs font-bold text-violet-700">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-bold text-blue-700">
                               {patient.appointmentCount} {patient.appointmentCount === 1 ? "booking" : "bookings"}
                             </span>
                           </td>

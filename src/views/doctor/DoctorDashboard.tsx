@@ -46,8 +46,8 @@ const DoctorDashboard = () => {
       value: stats.total,
       subtext: "Today's total",
       icon: CalendarDays,
-      iconBg: "bg-violet-100 text-violet-600",
-      stroke: "text-violet-200",
+      iconBg: "bg-blue-100 text-blue-600",
+      stroke: "text-blue-200",
     },
     {
       label: "Pending Requests",
@@ -62,8 +62,8 @@ const DoctorDashboard = () => {
       value: stats.accepted,
       subtext: "Confirmed",
       icon: CheckCircle,
-      iconBg: "bg-emerald-100 text-emerald-600",
-      stroke: "text-emerald-200",
+      iconBg: "bg-blue-100 text-blue-600",
+      stroke: "text-blue-200",
     },
     {
       label: "Rejected",
@@ -76,7 +76,7 @@ const DoctorDashboard = () => {
   ];
 
   const statusColor = (status: string) => {
-    if (status === "accepted") return "bg-emerald-100 text-emerald-700 hover:bg-emerald-100";
+    if (status === "accepted") return "bg-blue-100 text-blue-700 hover:bg-blue-100";
     if (status === "rejected" || status === "cancelled") return "bg-rose-100 text-rose-700 hover:bg-rose-100";
     return "bg-amber-100 text-amber-700 hover:bg-amber-100";
   };
@@ -152,9 +152,9 @@ const DoctorDashboard = () => {
         <Card className="lg:col-span-2 border-slate-200/80 bg-white shadow-sm rounded-2xl p-6">
           <div className="flex items-center justify-between mb-5">
             <CardTitle className="text-base font-bold text-slate-800 flex items-center gap-2">
-              <CalendarDays className="h-5 w-5 text-violet-500" /> Upcoming Appointments
+              <CalendarDays className="h-5 w-5 text-blue-500" /> Upcoming Appointments
             </CardTitle>
-            <Link to="/doctor/appointments" className="text-xs font-bold text-violet-600 hover:underline">
+            <Link to="/doctor/appointments" className="text-xs font-bold text-blue-600 hover:underline">
               View All &gt;
             </Link>
           </div>
@@ -170,7 +170,7 @@ const DoctorDashboard = () => {
                 return (
                   <div key={appointment.id} className="flex flex-col sm:flex-row sm:items-center justify-between rounded-2xl border border-slate-100 bg-slate-50/20 p-4 hover:bg-slate-50/50 transition-colors gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-700 font-extrabold text-sm shadow-sm">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700 font-extrabold text-sm shadow-sm">
                         {initial}
                       </div>
                       <div>
@@ -202,9 +202,9 @@ const DoctorDashboard = () => {
         <Card className="border-slate-200/80 bg-white shadow-sm rounded-2xl p-6">
           <div className="flex items-center justify-between mb-5">
             <CardTitle className="text-base font-bold text-slate-800 flex items-center gap-2">
-              <Clock className="h-5 w-5 text-violet-500" /> Today's Schedule
+              <Clock className="h-5 w-5 text-blue-500" /> Today's Schedule
             </CardTitle>
-            <Link to="/doctor/availability" className="text-xs font-bold text-violet-600 hover:underline">
+            <Link to="/doctor/availability" className="text-xs font-bold text-blue-600 hover:underline">
               View Calendar &gt;
             </Link>
           </div>
@@ -215,11 +215,11 @@ const DoctorDashboard = () => {
               <div key={idx} className="relative">
                 {/* Timeline dot */}
                 <div className={`absolute -left-[27px] top-1.5 h-3 w-3 rounded-full border-2 border-white ${
-                  item.status === 'blocked' ? 'bg-blue-500 shadow-[0_0_0_2px_rgba(59,130,246,0.2)]' : item.status === 'rejected' ? 'bg-red-500 shadow-[0_0_0_2px_rgba(239,68,68,0.2)]' : 'bg-emerald-500 shadow-[0_0_0_2px_rgba(16,185,129,0.2)]'
+                  item.status === 'blocked' ? 'bg-blue-500 shadow-[0_0_0_2px_rgba(59,130,246,0.2)]' : item.status === 'rejected' ? 'bg-red-500 shadow-[0_0_0_2px_rgba(239,68,68,0.2)]' : 'bg-blue-500 shadow-[0_0_0_2px_rgba(16,185,129,0.2)]'
                 }`} />
                 
                 <div className="flex items-center justify-between gap-3">
-                  <div className="w-16 shrink-0 text-xs font-extrabold text-violet-700">
+                  <div className="w-16 shrink-0 text-xs font-extrabold text-blue-700">
                     {item.time}
                   </div>
                   <div className="flex-1 flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50/20 p-3 hover:bg-slate-50/50 transition-colors">
@@ -228,7 +228,7 @@ const DoctorDashboard = () => {
                       <p className="text-[10px] text-slate-400 mt-0.5 truncate">{item.desc}</p>
                     </div>
                     <span className={`rounded-full px-2 py-0.5 text-[9px] font-bold shrink-0 capitalize ${
-                      item.status === 'accepted' ? 'bg-emerald-100 text-emerald-700' : 
+                      item.status === 'accepted' ? 'bg-blue-100 text-blue-700' : 
                       item.status === 'blocked' ? 'bg-blue-100 text-blue-700' : 'bg-rose-100 text-rose-700'
                     }`}>
                       {item.status === 'accepted' ? 'Accepted' : item.status === 'blocked' ? 'Blocked' : 'Rejected'}
@@ -244,7 +244,7 @@ const DoctorDashboard = () => {
       {/* Bottom Punctuality Banner */}
       <Card className="mt-6 border-slate-200/80 bg-white shadow-sm rounded-2xl p-6 flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative overflow-hidden">
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-violet-100 text-violet-600 shadow-sm">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 shadow-sm">
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M12 15l-2 5l9-11h-7l2-5l-9 11h7z" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -279,7 +279,7 @@ const DoctorDashboard = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-violet-600 shadow-sm">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 shadow-sm">
               <Zap className="h-5 w-5" />
             </div>
             <div>
@@ -292,7 +292,7 @@ const DoctorDashboard = () => {
 
         {/* Clipboard Illustration */}
         <div className="hidden xl:block shrink-0 pr-4 z-10">
-          <svg className="h-16 w-16 text-violet-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="h-16 w-16 text-blue-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="25" y="20" width="50" height="65" rx="8" fill="#F3E8FF" stroke="#A78BFA" strokeWidth="3"/>
             <rect x="40" y="12" width="20" height="12" rx="4" fill="#8B5CF6" />
             <line x1="35" y1="40" x2="65" y2="40" stroke="#A78BFA" strokeWidth="3" strokeLinecap="round"/>

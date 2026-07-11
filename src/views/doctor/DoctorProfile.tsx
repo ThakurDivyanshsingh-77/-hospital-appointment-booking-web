@@ -79,7 +79,7 @@ const DoctorProfile = () => {
         <Card className="border-slate-200/80 bg-white shadow-sm rounded-2xl overflow-hidden">
           <CardHeader className="border-b border-slate-100 bg-slate-50/30 p-5">
             <CardTitle className="text-base font-bold text-slate-800 flex items-center gap-2">
-              <User className="h-5 w-5 text-violet-500" /> Professional Profile
+              <User className="h-5 w-5 text-blue-500" /> Professional Profile
             </CardTitle>
           </CardHeader>
           <CardContent className="p-6">
@@ -100,7 +100,7 @@ const DoctorProfile = () => {
                       onChange={handleChange}
                       required
                       placeholder="e.g. Dr. Jane Smith"
-                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-violet-500"
+                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-blue-500"
                     />
                   </div>
 
@@ -116,7 +116,7 @@ const DoctorProfile = () => {
                       onChange={handleChange}
                       required
                       placeholder="e.g. Cardiologist"
-                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-violet-500"
+                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-blue-500"
                     />
                   </div>
 
@@ -133,7 +133,7 @@ const DoctorProfile = () => {
                       max={80}
                       value={profile.experienceYears}
                       onChange={handleChange}
-                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-violet-500"
+                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-blue-500"
                     />
                   </div>
 
@@ -148,7 +148,7 @@ const DoctorProfile = () => {
                       value={profile.qualification}
                       onChange={handleChange}
                       placeholder="e.g. MD, DM (Cardiology)"
-                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-violet-500"
+                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-blue-500"
                     />
                   </div>
                 </div>
@@ -164,7 +164,7 @@ const DoctorProfile = () => {
                     value={profile.avatarUrl}
                     onChange={handleChange}
                     placeholder="https://example.com/avatar.jpg"
-                    className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-violet-500"
+                    className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-blue-500"
                   />
                 </div>
 
@@ -180,7 +180,7 @@ const DoctorProfile = () => {
                     onChange={handleChange}
                     rows={5}
                     placeholder="Share details about your medical practice, research interests, and patient care philosophies..."
-                    className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-violet-500"
+                    className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-blue-500"
                   />
                 </div>
 
@@ -188,7 +188,7 @@ const DoctorProfile = () => {
                   <Button
                     type="submit"
                     disabled={saving}
-                    className="bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-xl px-6 py-2.5 shadow-sm transition-colors"
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl px-6 py-2.5 shadow-sm transition-colors"
                   >
                     {saving ? "Saving Changes..." : "Save Profile Details"}
                   </Button>

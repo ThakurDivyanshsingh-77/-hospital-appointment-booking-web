@@ -36,12 +36,12 @@ const AdminAppointments = () => {
   const statusColor = (status: string) => {
     switch (status) {
       case "accepted":
-        return "bg-violet-100 text-violet-700";
+        return "bg-blue-100 text-blue-700";
       case "rejected":
       case "cancelled":
         return "bg-rose-100 text-rose-700";
       default:
-        return "bg-purple-100 text-purple-700";
+        return "bg-blue-100 text-blue-700";
     }
   };
 
@@ -85,11 +85,11 @@ const AdminAppointments = () => {
           </Card>
           <Card className="border-slate-200/80 bg-white/90 p-4 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Pending</p>
-            <p className="mt-2 text-2xl font-bold text-purple-700">{counts.pending}</p>
+            <p className="mt-2 text-2xl font-bold text-blue-700">{counts.pending}</p>
           </Card>
           <Card className="border-slate-200/80 bg-white/90 p-4 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Accepted</p>
-            <p className="mt-2 text-2xl font-bold text-violet-700">{counts.accepted}</p>
+            <p className="mt-2 text-2xl font-bold text-blue-700">{counts.accepted}</p>
           </Card>
           <Card className="border-slate-200/80 bg-white/90 p-4 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Rejected</p>

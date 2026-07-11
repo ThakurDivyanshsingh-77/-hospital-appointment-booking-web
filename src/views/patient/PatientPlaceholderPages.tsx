@@ -23,7 +23,7 @@ export const HealthRecordsPage = () => {
     <PatientLayout title="Health Records" subtitle="Access your medical documents, lab results, and reports">
       <Card className="border-slate-200/80 bg-white/95 p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-semibold text-slate-900 flex items-center gap-2">
-          <FileText className="h-5 w-5 text-violet-600" />
+          <FileText className="h-5 w-5 text-blue-600" />
           My Medical Documents
         </h2>
         <div className="divide-y divide-slate-100">
@@ -37,7 +37,7 @@ export const HealthRecordsPage = () => {
                 <Button variant="outline" size="sm" className="gap-1 text-slate-600">
                   <Eye className="h-3.5 w-3.5" /> View
                 </Button>
-                <Button variant="outline" size="sm" className="gap-1 text-violet-700 hover:text-violet-800 border-violet-200 hover:bg-violet-50">
+                <Button variant="outline" size="sm" className="gap-1 text-blue-700 hover:text-blue-800 border-blue-200 hover:bg-blue-50">
                   <Download className="h-3.5 w-3.5" /> Download ({doc.size})
                 </Button>
               </div>
@@ -60,7 +60,7 @@ export const PrescriptionsPage = () => {
     <PatientLayout title="Prescriptions" subtitle="Your active and past medication prescriptions">
       <Card className="border-slate-200/80 bg-white/95 p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-semibold text-slate-900 flex items-center gap-2">
-          <Pill className="h-5 w-5 text-violet-600" />
+          <Pill className="h-5 w-5 text-blue-600" />
           Medication List
         </h2>
         <div className="space-y-4">
@@ -71,7 +71,7 @@ export const PrescriptionsPage = () => {
                   <div className="flex items-center gap-2">
                     <p className="font-semibold text-slate-950">{med.name}</p>
                     <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                      med.active ? "bg-emerald-50 text-emerald-700 border border-emerald-200/50" : "bg-slate-100 text-slate-500"
+                      med.active ? "bg-blue-50 text-blue-700 border border-blue-200/50" : "bg-slate-100 text-slate-500"
                     }`}>
                       {med.active ? "Active" : "Completed"}
                     </span>
@@ -80,7 +80,7 @@ export const PrescriptionsPage = () => {
                   <p className="mt-2 text-xs text-slate-400">Prescribed by {med.doctor}</p>
                 </div>
                 {med.active && (
-                  <Button variant="outline" size="sm" className="border-violet-200 text-violet-700 hover:bg-violet-50">
+                  <Button variant="outline" size="sm" className="border-blue-200 text-blue-700 hover:bg-blue-50">
                     Refill Request
                   </Button>
                 )}
@@ -100,8 +100,8 @@ export const MessagesPage = () => {
         <Card className="border-slate-200/80 bg-white/95 p-4 shadow-sm lg:col-span-1">
           <h2 className="mb-4 text-md font-semibold text-slate-900">Conversations</h2>
           <div className="space-y-2">
-            <div className="rounded-xl bg-violet-50/70 border border-violet-100 p-3 flex gap-3 cursor-pointer">
-              <div className="h-10 w-10 shrink-0 rounded-full bg-violet-100 flex items-center justify-center font-bold text-violet-700">D</div>
+            <div className="rounded-xl bg-blue-50/70 border border-blue-100 p-3 flex gap-3 cursor-pointer">
+              <div className="h-10 w-10 shrink-0 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-700">D</div>
               <div className="min-w-0 flex-1">
                 <div className="flex justify-between items-baseline">
                   <p className="text-sm font-semibold text-slate-950">Dr. Divyansh Singh</p>
@@ -115,10 +115,10 @@ export const MessagesPage = () => {
 
         <Card className="border-slate-200/80 bg-white/95 p-6 shadow-sm lg:col-span-2 flex flex-col h-[500px]">
           <div className="border-b border-slate-100 pb-4 mb-4 flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-violet-100 flex items-center justify-center font-bold text-violet-700">D</div>
+            <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-700">D</div>
             <div>
               <p className="font-semibold text-slate-950">Dr. Divyansh Singh</p>
-              <p className="text-xs text-emerald-600">Online</p>
+              <p className="text-xs text-blue-600">Online</p>
             </div>
           </div>
           <div className="flex-1 overflow-y-auto space-y-4 pr-2">
@@ -128,7 +128,7 @@ export const MessagesPage = () => {
               </div>
             </div>
             <div className="flex gap-2 max-w-[80%] ml-auto justify-end">
-              <div className="rounded-2xl bg-violet-600 p-3 text-sm text-white">
+              <div className="rounded-2xl bg-blue-600 p-3 text-sm text-white">
                 Thank you doctor. Should I schedule the follow-up for next month?
               </div>
             </div>
@@ -142,9 +142,9 @@ export const MessagesPage = () => {
             <input 
               type="text" 
               placeholder="Type your message..." 
-              className="flex-1 rounded-xl border border-slate-200 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+              className="flex-1 rounded-xl border border-slate-200 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
             />
-            <Button className="bg-violet-600 hover:bg-violet-700">
+            <Button className="bg-blue-600 hover:bg-blue-700">
               <Send className="h-4 w-4" />
             </Button>
           </div>
@@ -159,7 +159,7 @@ export const ProfilePage = () => {
     <PatientLayout title="Profile" subtitle="Manage your personal and health profile details">
       <Card className="border-slate-200/80 bg-white/95 p-6 shadow-sm">
         <h2 className="mb-6 text-lg font-semibold text-slate-900 flex items-center gap-2">
-          <User className="h-5 w-5 text-violet-600" />
+          <User className="h-5 w-5 text-blue-600" />
           Personal Information
         </h2>
         <div className="grid gap-6 sm:grid-cols-2">
@@ -190,7 +190,7 @@ export const SettingsPage = () => {
     <PatientLayout title="Settings" subtitle="Adjust your account settings and preferences">
       <Card className="border-slate-200/80 bg-white/95 p-6 shadow-sm">
         <h2 className="mb-6 text-lg font-semibold text-slate-900 flex items-center gap-2">
-          <SettingsIcon className="h-5 w-5 text-violet-600" />
+          <SettingsIcon className="h-5 w-5 text-blue-600" />
           Account Settings
         </h2>
         <div className="space-y-6">
@@ -199,14 +199,14 @@ export const SettingsPage = () => {
               <p className="font-semibold text-slate-950">Email Notifications</p>
               <p className="text-xs text-slate-500">Receive appointment updates and tips via email</p>
             </div>
-            <input type="checkbox" defaultChecked className="h-4 w-4 rounded border-slate-300 text-violet-600 focus:ring-violet-500" />
+            <input type="checkbox" defaultChecked className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500" />
           </div>
           <div className="flex items-center justify-between border-t border-slate-100 pt-4">
             <div>
               <p className="font-semibold text-slate-950">SMS Reminders</p>
               <p className="text-xs text-slate-500">Get text messages before scheduled appointments</p>
             </div>
-            <input type="checkbox" defaultChecked className="h-4 w-4 rounded border-slate-300 text-violet-600 focus:ring-violet-500" />
+            <input type="checkbox" defaultChecked className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500" />
           </div>
         </div>
       </Card>

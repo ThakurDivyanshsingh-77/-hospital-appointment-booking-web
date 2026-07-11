@@ -42,7 +42,7 @@ const DoctorLayout = ({ children, title, subtitle }: DoctorLayoutProps) => {
   return (
     <SidebarProvider>
       <div className="relative flex min-h-screen w-full overflow-hidden bg-slate-100">
-        <div className="pointer-events-none absolute -left-20 -top-24 h-72 w-72 rounded-full bg-violet-200/30 blur-3xl" />
+        <div className="pointer-events-none absolute -left-20 -top-24 h-72 w-72 rounded-full bg-blue-200/30 blur-3xl" />
         <div className="pointer-events-none absolute -right-16 top-24 h-72 w-72 rounded-full bg-fuchsia-200/30 blur-3xl" />
 
         <DoctorSidebar />
@@ -64,7 +64,7 @@ const DoctorLayout = ({ children, title, subtitle }: DoctorLayoutProps) => {
                     <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">CareConnect Doctor</p>
                     <div className="flex flex-wrap items-center gap-2 mt-0.5">
                       <h1 className="truncate text-lg font-bold text-slate-900">{title}</h1>
-                      <Badge variant="secondary" className="rounded-md bg-violet-100 text-violet-700">
+                      <Badge variant="secondary" className="rounded-md bg-blue-100 text-blue-700">
                         {sectionName}
                       </Badge>
                     </div>
@@ -85,7 +85,7 @@ const DoctorLayout = ({ children, title, subtitle }: DoctorLayoutProps) => {
                 {/* Profile Card / Dropdown */}
                 {profile && (
                   <div className="hidden items-center gap-2.5 rounded-xl border border-slate-200 bg-white pl-2.5 pr-3 py-1.5 shadow-sm sm:flex">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-100 text-violet-700 font-bold text-sm">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold text-sm">
                       {profile.fullName.charAt(0)}
                     </div>
                     <div className="text-left leading-none">

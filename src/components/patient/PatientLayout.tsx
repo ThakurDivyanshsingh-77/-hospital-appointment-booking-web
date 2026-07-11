@@ -49,8 +49,8 @@ const PatientLayout = ({ children, title, subtitle }: PatientLayoutProps) => {
     <SidebarProvider>
       <div className="relative flex min-h-screen w-full overflow-hidden bg-slate-50">
         {/* Background blobs */}
-        <div className="pointer-events-none absolute -left-20 -top-24 h-96 w-96 rounded-full bg-violet-200/20 blur-3xl" />
-        <div className="pointer-events-none absolute -right-16 top-24 h-96 w-96 rounded-full bg-purple-200/20 blur-3xl" />
+        <div className="pointer-events-none absolute -left-20 -top-24 h-96 w-96 rounded-full bg-blue-200/20 blur-3xl" />
+        <div className="pointer-events-none absolute -right-16 top-24 h-96 w-96 rounded-full bg-blue-200/20 blur-3xl" />
 
         <PatientSidebar />
 
@@ -64,7 +64,7 @@ const PatientLayout = ({ children, title, subtitle }: PatientLayoutProps) => {
                 </span>
                 <div className="flex items-center gap-2">
                   <h1 className="text-lg font-bold text-slate-900">{sectionName}</h1>
-                  <span className="rounded-md bg-violet-50 border border-violet-100 px-2 py-0.5 text-xs font-semibold text-violet-700">
+                  <span className="rounded-md bg-blue-50 border border-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">
                     Active
                   </span>
                 </div>
@@ -84,13 +84,13 @@ const PatientLayout = ({ children, title, subtitle }: PatientLayoutProps) => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-2 text-left shadow-sm hover:bg-slate-50 transition-all">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-600 text-white font-bold text-sm">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white font-bold text-sm">
                       {getInitials(user?.fullName)}
                     </div>
                     <div className="hidden md:block pr-1">
                       <div className="flex items-center gap-1.5">
                         <p className="text-xs font-bold text-slate-900">{user?.fullName || "Akash Yadav"}</p>
-                        <span className="rounded bg-violet-100 px-1 py-0.5 text-[9px] font-bold text-violet-700 uppercase">
+                        <span className="rounded bg-blue-100 px-1 py-0.5 text-[9px] font-bold text-blue-700 uppercase">
                           Patient
                         </span>
                       </div>
@@ -104,10 +104,10 @@ const PatientLayout = ({ children, title, subtitle }: PatientLayoutProps) => {
                     My Account
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator className="bg-slate-100" />
-                  <DropdownMenuItem asChild className="rounded-xl px-3 py-2 text-sm focus:bg-violet-50 focus:text-violet-900 cursor-pointer">
+                  <DropdownMenuItem asChild className="rounded-xl px-3 py-2 text-sm focus:bg-blue-50 focus:text-blue-900 cursor-pointer">
                     <Link to="/patient/profile">My Profile</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className="rounded-xl px-3 py-2 text-sm focus:bg-violet-50 focus:text-violet-900 cursor-pointer">
+                  <DropdownMenuItem asChild className="rounded-xl px-3 py-2 text-sm focus:bg-blue-50 focus:text-blue-900 cursor-pointer">
                     <Link to="/patient/settings">Settings</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator className="bg-slate-100" />

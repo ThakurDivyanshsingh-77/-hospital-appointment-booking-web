@@ -85,7 +85,7 @@ const DoctorSidebar = () => {
       <SidebarHeader className="p-2">
         <div className="rounded-2xl border border-slate-200 bg-white/85 p-3 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-purple-500 text-white shadow-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-500 text-white shadow-sm">
               <Stethoscope className="h-5 w-5" />
             </div>
             {!collapsed && (
@@ -97,8 +97,8 @@ const DoctorSidebar = () => {
           </div>
 
           {!collapsed && (
-            <div className="mt-3 flex items-center gap-2 rounded-xl bg-violet-50 px-2.5 py-2 text-xs text-violet-700">
-              <Sparkles className="h-3.5 w-3.5 text-violet-600" />
+            <div className="mt-3 flex items-center gap-2 rounded-xl bg-blue-50 px-2.5 py-2 text-xs text-blue-700">
+              <Sparkles className="h-3.5 w-3.5 text-blue-600" />
               Smart scheduling enabled
             </div>
           )}
@@ -118,8 +118,8 @@ const DoctorSidebar = () => {
                     <NavLink
                       to={item.url}
                       end={item.url === "/doctor"}
-                      className="flex w-full items-center gap-3 rounded-xl px-3 py-2 text-slate-600 transition-colors hover:bg-violet-50 hover:text-violet-800"
-                      activeClassName="bg-violet-100/80 font-semibold text-violet-900 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.22)]"
+                      className="flex w-full items-center gap-3 rounded-xl px-3 py-2 text-slate-600 transition-colors hover:bg-blue-50 hover:text-blue-800"
+                      activeClassName="bg-blue-100/80 font-semibold text-blue-900 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.22)]"
                     >
                       <item.icon className="h-4 w-4 shrink-0" />
                       <div className="min-w-0 group-data-[collapsible=icon]:hidden">
@@ -139,7 +139,7 @@ const DoctorSidebar = () => {
         {!collapsed && profile && (
           <div className="mb-2 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-sm">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-700 font-bold text-sm">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700 font-bold text-sm">
                 {profile.fullName.charAt(0)}
               </div>
               <div className="min-w-0 flex-1">
@@ -147,8 +147,8 @@ const DoctorSidebar = () => {
                   {profile.fullName.startsWith("Dr.") ? profile.fullName : `Dr. ${profile.fullName}`}
                 </p>
                 <p className="truncate text-[10px] text-slate-500">{profile.specialty}</p>
-                <p className="flex items-center gap-1 text-[9px] text-emerald-600 font-semibold mt-0.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Online
+                <p className="flex items-center gap-1 text-[9px] text-blue-600 font-semibold mt-0.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" /> Online
                 </p>
               </div>
             </div>

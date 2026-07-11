@@ -7,7 +7,7 @@ export const AdminPatientsPage = () => {
     <AdminLayout title="Patients" subtitle="Patient registration and record management">
       <Card className="border-slate-200/80 bg-white/95 p-6 shadow-sm">
         <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2 mb-4">
-          <Users className="h-5 w-5 text-violet-600" />
+          <Users className="h-5 w-5 text-blue-600" />
           Patient Directory
         </h2>
         <p className="text-sm text-slate-500">Manage patient records, access histories, and patient account controls.</p>
@@ -21,7 +21,7 @@ export const AdminReportsPage = () => {
     <AdminLayout title="Reports" subtitle="System usage, financials, and analytical performance logs">
       <Card className="border-slate-200/80 bg-white/95 p-6 shadow-sm">
         <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2 mb-4">
-          <FileText className="h-5 w-5 text-violet-600" />
+          <FileText className="h-5 w-5 text-blue-600" />
           Analytics & Insights
         </h2>
         <p className="text-sm text-slate-500">Generate, view, and export operational reports for clinics, doctors, and user sign-ups.</p>
@@ -35,7 +35,7 @@ export const AdminSettingsPage = () => {
     <AdminLayout title="Settings" subtitle="CareConnect system settings and configuration details">
       <Card className="border-slate-200/80 bg-white/95 p-6 shadow-sm">
         <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2 mb-4">
-          <Settings className="h-5 w-5 text-violet-600" />
+          <Settings className="h-5 w-5 text-blue-600" />
           System Configuration
         </h2>
         <p className="text-sm text-slate-500">Configure appointment intervals, doctor profiles, notification channels, and global variables.</p>

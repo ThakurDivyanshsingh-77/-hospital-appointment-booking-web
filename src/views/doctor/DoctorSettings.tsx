@@ -89,7 +89,7 @@ const DoctorSettings = () => {
             onClick={() => setActiveTab("security")}
             className={`flex items-center gap-2.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
               activeTab === "security"
-                ? "bg-violet-100 text-violet-800 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.15)]"
+                ? "bg-blue-100 text-blue-800 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.15)]"
                 : "text-slate-500 hover:bg-slate-100 hover:text-slate-800"
             }`}
           >
@@ -99,7 +99,7 @@ const DoctorSettings = () => {
             onClick={() => setActiveTab("notifications")}
             className={`flex items-center gap-2.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
               activeTab === "notifications"
-                ? "bg-violet-100 text-violet-800 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.15)]"
+                ? "bg-blue-100 text-blue-800 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.15)]"
                 : "text-slate-500 hover:bg-slate-100 hover:text-slate-800"
             }`}
           >
@@ -109,7 +109,7 @@ const DoctorSettings = () => {
             onClick={() => setActiveTab("system")}
             className={`flex items-center gap-2.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
               activeTab === "system"
-                ? "bg-violet-100 text-violet-800 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.15)]"
+                ? "bg-blue-100 text-blue-800 shadow-[inset_0_0_0_1px_rgba(109,40,217,0.15)]"
                 : "text-slate-500 hover:bg-slate-100 hover:text-slate-800"
             }`}
           >
@@ -123,7 +123,7 @@ const DoctorSettings = () => {
             <Card className="border-slate-200/80 bg-white shadow-sm rounded-2xl overflow-hidden">
               <CardHeader className="border-b border-slate-100 bg-slate-50/30 p-5">
                 <CardTitle className="text-base font-bold text-slate-800 flex items-center gap-2">
-                  <Lock className="h-5 w-5 text-violet-500" /> Account Security
+                  <Lock className="h-5 w-5 text-blue-500" /> Account Security
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -139,7 +139,7 @@ const DoctorSettings = () => {
                         value={passwords.currentPassword}
                         onChange={handlePasswordChange}
                         required
-                        className="border-slate-200 bg-white rounded-xl shadow-sm pr-10 focus-visible:ring-violet-500"
+                        className="border-slate-200 bg-white rounded-xl shadow-sm pr-10 focus-visible:ring-blue-500"
                       />
                       <button
                         type="button"
@@ -162,7 +162,7 @@ const DoctorSettings = () => {
                         value={passwords.newPassword}
                         onChange={handlePasswordChange}
                         required
-                        className="border-slate-200 bg-white rounded-xl shadow-sm pr-10 focus-visible:ring-violet-500"
+                        className="border-slate-200 bg-white rounded-xl shadow-sm pr-10 focus-visible:ring-blue-500"
                       />
                       <button
                         type="button"
@@ -184,7 +184,7 @@ const DoctorSettings = () => {
                       value={passwords.confirmNewPassword}
                       onChange={handlePasswordChange}
                       required
-                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-violet-500"
+                      className="border-slate-200 bg-white rounded-xl shadow-sm focus-visible:ring-blue-500"
                     />
                   </div>
 
@@ -192,7 +192,7 @@ const DoctorSettings = () => {
                     <Button
                       type="submit"
                       disabled={savingPassword}
-                      className="bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-xl px-5 py-2.5 shadow-sm transition-colors"
+                      className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl px-5 py-2.5 shadow-sm transition-colors"
                     >
                       {savingPassword ? "Updating Password..." : "Change Password"}
                     </Button>
@@ -206,7 +206,7 @@ const DoctorSettings = () => {
             <Card className="border-slate-200/80 bg-white shadow-sm rounded-2xl overflow-hidden">
               <CardHeader className="border-b border-slate-100 bg-slate-50/30 p-5">
                 <CardTitle className="text-base font-bold text-slate-800 flex items-center gap-2">
-                  <Bell className="h-5 w-5 text-violet-500" /> Notifications & Alerts
+                  <Bell className="h-5 w-5 text-blue-500" /> Notifications & Alerts
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -220,7 +220,7 @@ const DoctorSettings = () => {
                     <button
                       onClick={() => toggleNotification("emailAlerts")}
                       className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                        notifications.emailAlerts ? "bg-violet-600" : "bg-slate-200"
+                        notifications.emailAlerts ? "bg-blue-600" : "bg-slate-200"
                       }`}
                     >
                       <span
@@ -240,7 +240,7 @@ const DoctorSettings = () => {
                     <button
                       onClick={() => toggleNotification("smsAlerts")}
                       className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                        notifications.smsAlerts ? "bg-violet-600" : "bg-slate-200"
+                        notifications.smsAlerts ? "bg-blue-600" : "bg-slate-200"
                       }`}
                     >
                       <span
@@ -260,7 +260,7 @@ const DoctorSettings = () => {
                     <button
                       onClick={() => toggleNotification("pushAlerts")}
                       className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                        notifications.pushAlerts ? "bg-violet-600" : "bg-slate-200"
+                        notifications.pushAlerts ? "bg-blue-600" : "bg-slate-200"
                       }`}
                     >
                       <span
@@ -280,7 +280,7 @@ const DoctorSettings = () => {
                     <button
                       onClick={() => toggleNotification("dailyDigest")}
                       className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                        notifications.dailyDigest ? "bg-violet-600" : "bg-slate-200"
+                        notifications.dailyDigest ? "bg-blue-600" : "bg-slate-200"
                       }`}
                     >
                       <span
@@ -299,7 +299,7 @@ const DoctorSettings = () => {
             <Card className="border-slate-200/80 bg-white shadow-sm rounded-2xl overflow-hidden">
               <CardHeader className="border-b border-slate-100 bg-slate-50/30 p-5">
                 <CardTitle className="text-base font-bold text-slate-800 flex items-center gap-2">
-                  <Settings className="h-5 w-5 text-violet-500" /> System Preferences
+                  <Settings className="h-5 w-5 text-blue-500" /> System Preferences
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -311,7 +311,7 @@ const DoctorSettings = () => {
                       id="theme"
                       value={system.theme}
                       onChange={(e) => handleSystemChange("theme", e.target.value)}
-                      className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm focus:border-violet-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm focus:border-blue-500 focus:outline-none"
                     >
                       <option value="light">Light Theme</option>
                       <option value="dark">Dark Theme (Coming Soon)</option>
@@ -325,7 +325,7 @@ const DoctorSettings = () => {
                       id="language"
                       value={system.language}
                       onChange={(e) => handleSystemChange("language", e.target.value)}
-                      className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm focus:border-violet-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm focus:border-blue-500 focus:outline-none"
                     >
                       <option value="en">English (US)</option>
                       <option value="es">Español</option>
@@ -340,7 +340,7 @@ const DoctorSettings = () => {
                       id="startOfWeek"
                       value={system.startOfWeek}
                       onChange={(e) => handleSystemChange("startOfWeek", e.target.value)}
-                      className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm focus:border-violet-500 focus:outline-none"
+                      className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm focus:border-blue-500 focus:outline-none"
                     >
                       <option value="monday">Monday</option>
                       <option value="sunday">Sunday</option>

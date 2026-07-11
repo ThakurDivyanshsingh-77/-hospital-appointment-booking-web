@@ -75,9 +75,9 @@ const PatientDashboard = () => {
       value: stats.total,
       sub: "All time",
       icon: CalendarDays,
-      color: "text-violet-600 bg-violet-50/70 border-violet-100",
+      color: "text-blue-600 bg-blue-50/70 border-blue-100",
       wavePath: "M0 25 C10 15, 30 15, 45 20 C60 25, 75 10, 100 22",
-      waveColor: "stroke-violet-300",
+      waveColor: "stroke-blue-300",
     },
     {
       label: "Pending",
@@ -93,9 +93,9 @@ const PatientDashboard = () => {
       value: stats.accepted,
       sub: "Confirmed",
       icon: CheckCircle,
-      color: "text-emerald-600 bg-emerald-50/70 border-emerald-100",
+      color: "text-blue-600 bg-blue-50/70 border-blue-100",
       wavePath: "M0 15 C15 15, 35 28, 55 12 C75 22, 85 24, 100 10",
-      waveColor: "stroke-emerald-300",
+      waveColor: "stroke-blue-300",
     },
     {
       label: "Rejected",
@@ -168,13 +168,13 @@ const PatientDashboard = () => {
           <Card className="border-slate-100 bg-white p-6 shadow-sm">
             <div className="mb-6 flex items-center justify-between">
               <h3 className="text-md font-bold text-slate-900 flex items-center gap-2">
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
                   <CalendarDays className="h-4 w-4" />
                 </span>
                 Upcoming Appointments
               </h3>
               <Link to="/patient/appointments">
-                <Button variant="ghost" size="sm" className="text-xs font-semibold text-violet-700 hover:bg-violet-50 gap-1">
+                <Button variant="ghost" size="sm" className="text-xs font-semibold text-blue-700 hover:bg-blue-50 gap-1">
                   View All <ChevronRight className="h-3 w-3" />
                 </Button>
               </Link>
@@ -184,7 +184,7 @@ const PatientDashboard = () => {
               <div className="py-10 text-center">
                 <p className="text-sm text-slate-400 font-medium">No upcoming appointments scheduled.</p>
                 <Link to="/patient/book" className="mt-3 inline-block">
-                  <Button size="sm" className="bg-violet-600 hover:bg-violet-700">
+                  <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
                     Book Now
                   </Button>
                 </Link>
@@ -199,13 +199,13 @@ const PatientDashboard = () => {
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       {/* Doctor Details */}
                       <div className="flex gap-4">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-violet-100 text-violet-700 font-bold text-md shadow-inner">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-md shadow-inner">
                           {appointment.doctor ? appointment.doctor.fullName.split(" ").map((n) => n[0]).join("") : "Dr"}
                         </div>
                         <div>
                           <p className="font-bold text-slate-900 text-base">{appointment.doctor?.fullName || "Dr. Divyansh Singh"}</p>
                           <p className="text-xs text-slate-500 font-medium">{appointment.doctor?.specialty || "Cardiology Specialist"}</p>
-                          <span className="mt-2 inline-flex items-center rounded-full bg-violet-50 border border-violet-100 px-2 py-0.5 text-[10px] font-semibold text-violet-700 uppercase">
+                          <span className="mt-2 inline-flex items-center rounded-full bg-blue-50 border border-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700 uppercase">
                             Follow-up
                           </span>
                         </div>
@@ -229,11 +229,11 @@ const PatientDashboard = () => {
 
                       {/* Status and Action */}
                       <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3">
-                        <span className="rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 uppercase tracking-wide">
+                        <span className="rounded-full bg-blue-50 border border-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 uppercase tracking-wide">
                           {appointment.status}
                         </span>
                         <Link to="/patient/appointments">
-                          <Button variant="outline" size="sm" className="text-xs border-violet-200 text-violet-700 hover:bg-violet-50">
+                          <Button variant="outline" size="sm" className="text-xs border-blue-200 text-blue-700 hover:bg-blue-50">
                             View Details
                           </Button>
                         </Link>
@@ -245,9 +245,9 @@ const PatientDashboard = () => {
             )}
 
             {/* Need a new appointment banner */}
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border-2 border-dashed border-teal-200 bg-teal-50/10 p-5">
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border-2 border-dashed border-indigo-200 bg-indigo-50/10 p-5">
               <div className="flex items-center gap-3.5 text-center sm:text-left flex-col sm:flex-row">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-100/55 text-teal-800 shadow-sm shrink-0">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100/55 text-indigo-800 shadow-sm shrink-0">
                   <CalendarPlus className="h-6 w-6" />
                 </div>
                 <div>
@@ -256,7 +256,7 @@ const PatientDashboard = () => {
                 </div>
               </div>
               <Link to="/patient/book">
-                <Button className="bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white font-semibold text-sm rounded-xl px-5 py-2.5 shadow-md shadow-teal-500/15">
+                <Button className="bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-semibold text-sm rounded-xl px-5 py-2.5 shadow-md shadow-indigo-500/15">
                   Book New Appointment
                 </Button>
               </Link>
@@ -266,7 +266,7 @@ const PatientDashboard = () => {
           {/* Your Health at a Glance Card */}
           <Card className="border-slate-100 bg-white p-6 shadow-sm">
             <h3 className="text-md font-bold text-slate-900 flex items-center gap-2 mb-6">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-teal-50 text-teal-600">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
                 <Sparkles className="h-4 w-4" />
               </span>
               Your Health at a Glance
@@ -281,7 +281,7 @@ const PatientDashboard = () => {
               <div className="rounded-2xl border border-slate-100 bg-slate-50/50 p-4">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Next Appointment</p>
                 <p className="text-sm font-extrabold text-slate-800 mt-2">6 Jul 2026</p>
-                <p className="text-[10px] text-teal-600 font-bold mt-0.5">In 5 days</p>
+                <p className="text-[10px] text-indigo-600 font-bold mt-0.5">In 5 days</p>
               </div>
               <div className="rounded-2xl border border-slate-100 bg-slate-50/50 p-4">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Prescriptions</p>
@@ -294,7 +294,7 @@ const PatientDashboard = () => {
                   <p className="text-sm font-extrabold text-slate-900">85</p>
                   <p className="text-[10px] text-slate-400 font-bold">/ 100</p>
                 </div>
-                <p className="text-[10px] text-emerald-600 font-bold mt-0.5">Good</p>
+                <p className="text-[10px] text-blue-600 font-bold mt-0.5">Good</p>
               </div>
             </div>
           </Card>
@@ -305,7 +305,7 @@ const PatientDashboard = () => {
           {/* Quick Actions Card */}
           <Card className="border-slate-100 bg-white p-6 shadow-sm">
             <h3 className="text-md font-bold text-slate-900 flex items-center gap-2 mb-6">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
                 <Sparkles className="h-4 w-4" />
               </span>
               Quick Actions
@@ -313,9 +313,9 @@ const PatientDashboard = () => {
 
             <div className="grid gap-3 grid-cols-2">
               <Link to="/patient/book" className="block">
-                <div className="rounded-2xl border border-violet-100 bg-violet-50/20 p-4 text-center cursor-pointer hover:bg-violet-50/50 hover:border-violet-200 transition-all group h-full flex flex-col items-center justify-center">
-                  <CalendarPlus className="h-5 w-5 text-violet-600 group-hover:scale-110 transition-transform" />
-                  <p className="text-xs font-bold text-violet-900 mt-2">Book Appointment</p>
+                <div className="rounded-2xl border border-blue-100 bg-blue-50/20 p-4 text-center cursor-pointer hover:bg-blue-50/50 hover:border-blue-200 transition-all group h-full flex flex-col items-center justify-center">
+                  <CalendarPlus className="h-5 w-5 text-blue-600 group-hover:scale-110 transition-transform" />
+                  <p className="text-xs font-bold text-blue-900 mt-2">Book Appointment</p>
                 </div>
               </Link>
 
@@ -327,9 +327,9 @@ const PatientDashboard = () => {
               </Link>
 
               <Link to="/patient/records" className="block">
-                <div className="rounded-2xl border border-emerald-100 bg-emerald-50/20 p-4 text-center cursor-pointer hover:bg-emerald-50/50 hover:border-emerald-200 transition-all group h-full flex flex-col items-center justify-center">
-                  <FileText className="h-5 w-5 text-emerald-600 group-hover:scale-110 transition-transform" />
-                  <p className="text-xs font-bold text-emerald-900 mt-2">Health Records</p>
+                <div className="rounded-2xl border border-blue-100 bg-blue-50/20 p-4 text-center cursor-pointer hover:bg-blue-50/50 hover:border-blue-200 transition-all group h-full flex flex-col items-center justify-center">
+                  <FileText className="h-5 w-5 text-blue-600 group-hover:scale-110 transition-transform" />
+                  <p className="text-xs font-bold text-blue-900 mt-2">Health Records</p>
                 </div>
               </Link>
 
@@ -353,7 +353,7 @@ const PatientDashboard = () => {
                 <p className="text-sm font-medium text-slate-700 mt-3 leading-relaxed">
                   Drink plenty of water and get 7-8 hours of sleep for a healthy heart.
                 </p>
-                <Button variant="link" className="p-0 text-violet-700 hover:text-violet-900 text-xs font-bold gap-1 mt-4">
+                <Button variant="link" className="p-0 text-blue-700 hover:text-blue-900 text-xs font-bold gap-1 mt-4">
                   Learn More <ChevronRight className="h-3 w-3" />
                 </Button>
               </div>
@@ -397,7 +397,7 @@ const PatientDashboard = () => {
                   Regular check-ups help you stay healthy and prevent problems before they start.
                 </p>
                 <Link to="/patient/book">
-                  <Button className="mt-4 bg-violet-600 hover:bg-violet-700 text-white text-xs font-bold gap-1 rounded-xl px-4 py-2 shadow-md shadow-violet-500/10">
+                  <Button className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold gap-1 rounded-xl px-4 py-2 shadow-md shadow-blue-500/10">
                     Schedule Now <ChevronRight className="h-3 w-3" />
                   </Button>
                 </Link>

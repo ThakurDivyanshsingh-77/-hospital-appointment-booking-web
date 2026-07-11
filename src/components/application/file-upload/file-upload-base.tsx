@@ -78,8 +78,8 @@ const FileUploadDropZone = ({ isDisabled, onDropFiles, className }: DropZoneProp
       className={cn(
         "flex flex-col items-center justify-center border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all duration-200 select-none",
         isDragActive
-          ? "border-violet-600 bg-violet-50/50 scale-[0.99]"
-          : "border-slate-200 bg-slate-50/30 hover:border-violet-400 hover:bg-slate-50/70",
+          ? "border-blue-600 bg-blue-50/50 scale-[0.99]"
+          : "border-slate-200 bg-slate-50/30 hover:border-blue-400 hover:bg-slate-50/70",
         isDisabled && "opacity-50 cursor-not-allowed pointer-events-none",
         className
       )}
@@ -93,11 +93,11 @@ const FileUploadDropZone = ({ isDisabled, onDropFiles, className }: DropZoneProp
         disabled={isDisabled}
         accept=".pdf,.jpg,.jpeg,.png,.webp"
       />
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm border border-slate-100 mb-3 text-slate-400 group-hover:text-violet-500 transition-colors">
-        <Upload className="h-6 w-6 text-violet-500" />
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm border border-slate-100 mb-3 text-slate-400 group-hover:text-blue-500 transition-colors">
+        <Upload className="h-6 w-6 text-blue-500" />
       </div>
       <p className="text-sm font-semibold text-slate-800">
-        Drag & drop files here, or <span className="text-violet-600 hover:text-violet-700">browse</span>
+        Drag & drop files here, or <span className="text-blue-600 hover:text-blue-700">browse</span>
       </p>
       <p className="text-xs text-slate-500 mt-1">PDF, JPEG, PNG, WebP (max 10MB)</p>
     </div>
@@ -137,7 +137,7 @@ const FileUploadListItemProgressBar = ({
       <div className="flex items-center gap-3 min-w-0 flex-1">
         <div className={cn(
           "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl",
-          failed ? "bg-rose-50 text-rose-500" : isImage ? "bg-blue-50 text-blue-500" : "bg-violet-50 text-violet-500"
+          failed ? "bg-rose-50 text-rose-500" : isImage ? "bg-blue-50 text-blue-500" : "bg-blue-50 text-blue-500"
         )}>
           {failed ? (
             <AlertTriangle className="h-5 w-5" />
@@ -157,7 +157,7 @@ const FileUploadListItemProgressBar = ({
               </span>
             )}
             {progress === 100 && !failed && (
-              <span className="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
+              <span className="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
                 Uploaded
               </span>
             )}
@@ -172,7 +172,7 @@ const FileUploadListItemProgressBar = ({
           {progress < 100 && !failed && (
             <div className="relative h-1.5 w-full rounded-full bg-slate-100 overflow-hidden">
               <div
-                className="h-full rounded-full transition-all duration-300 bg-violet-600"
+                className="h-full rounded-full transition-all duration-300 bg-blue-600"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -185,7 +185,7 @@ const FileUploadListItemProgressBar = ({
           <div className="flex items-center gap-1.5 mt-1.5 text-[10px] font-bold text-slate-400">
             <span>{getReadableFileSize(size)}</span>
             {progress === 100 && !failed && (
-              <span className="flex items-center gap-0.5 text-emerald-600">
+              <span className="flex items-center gap-0.5 text-blue-600">
                 <CheckCircle2 className="h-3 w-3" /> Ready
               </span>
             )}
@@ -198,7 +198,7 @@ const FileUploadListItemProgressBar = ({
           <button
             type="button"
             onClick={onView}
-            className="flex h-8 w-8 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-50 hover:text-violet-600 transition-colors"
+            className="flex h-8 w-8 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-50 hover:text-blue-600 transition-colors"
             title="View File"
           >
             <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -211,7 +211,7 @@ const FileUploadListItemProgressBar = ({
           <button
             type="button"
             onClick={onRetry}
-            className="flex h-8 w-8 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-50 hover:text-violet-600 transition-colors"
+            className="flex h-8 w-8 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-50 hover:text-blue-600 transition-colors"
             title="Retry Upload"
           >
             <RotateCcw className="h-4 w-4" />

@@ -122,7 +122,7 @@ const AdminDepartments = () => {
           <Card className="border-slate-200/80 bg-white/90 p-5 shadow-sm">
             <div className="flex items-center justify-between">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Total</p>
-              <Building2 className="h-4 w-4 text-violet-600" />
+              <Building2 className="h-4 w-4 text-blue-600" />
             </div>
             <p className="mt-2 text-3xl font-bold text-slate-900">{departments.length}</p>
             <p className="mt-1 text-xs text-slate-500">Department records</p>
@@ -130,9 +130,9 @@ const AdminDepartments = () => {
           <Card className="border-slate-200/80 bg-white/90 p-5 shadow-sm">
             <div className="flex items-center justify-between">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Active</p>
-              <CircleCheck className="h-4 w-4 text-violet-600" />
+              <CircleCheck className="h-4 w-4 text-blue-600" />
             </div>
-            <p className="mt-2 text-3xl font-bold text-violet-700">{activeCount}</p>
+            <p className="mt-2 text-3xl font-bold text-blue-700">{activeCount}</p>
             <p className="mt-1 text-xs text-slate-500">Visible in operations</p>
           </Card>
           <Card className="border-slate-200/80 bg-white/90 p-5 shadow-sm">
@@ -166,7 +166,7 @@ const AdminDepartments = () => {
               }}
             >
               <DialogTrigger asChild>
-                <Button className="h-10 gap-2 rounded-xl bg-violet-600 text-white hover:bg-violet-700">
+                <Button className="h-10 gap-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700">
                   <Plus className="h-4 w-4" />
                   Add Department
                 </Button>
@@ -190,7 +190,7 @@ const AdminDepartments = () => {
                       placeholder="Add a short overview of this department"
                     />
                   </div>
-                  <Button type="submit" className="w-full rounded-xl bg-violet-600 text-white hover:bg-violet-700">
+                  <Button type="submit" className="w-full rounded-xl bg-blue-600 text-white hover:bg-blue-700">
                     {editing ? "Update Department" : "Add Department"}
                   </Button>
                 </form>
@@ -216,7 +216,7 @@ const AdminDepartments = () => {
                   </div>
                   <Badge
                     className={
-                      department.isActive ? "rounded-md bg-violet-100 text-violet-700" : "rounded-md bg-rose-100 text-rose-700"
+                      department.isActive ? "rounded-md bg-blue-100 text-blue-700" : "rounded-md bg-rose-100 text-rose-700"
                     }
                   >
                     {department.isActive ? "Active" : "Inactive"}

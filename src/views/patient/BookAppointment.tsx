@@ -154,14 +154,14 @@ const BookAppointment = () => {
     return (
       <PatientLayout title="Book Appointment">
         <Card className="mx-auto max-w-lg border-slate-200/80 bg-white/95 p-12 text-center shadow-sm">
-          <CheckCircle className="mx-auto mb-4 h-16 w-16 text-violet-600" />
+          <CheckCircle className="mx-auto mb-4 h-16 w-16 text-blue-600" />
           <h2 className="mb-2 text-2xl font-bold text-slate-900">Appointment Booked!</h2>
           <p className="text-slate-500">
             Your appointment request has been submitted. The doctor will confirm it shortly.
           </p>
           <div className="mt-6 flex justify-center gap-3">
             <Button
-              className="bg-violet-600 hover:bg-violet-700"
+              className="bg-blue-600 hover:bg-blue-700"
               onClick={() => {
                 setSuccess(false);
                 setDate(undefined);
@@ -171,7 +171,7 @@ const BookAppointment = () => {
             >
               Book Another
             </Button>
-            <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50" onClick={() => navigate("/patient/appointments")}>
+            <Button variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50" onClick={() => navigate("/patient/appointments")}>
               View Appointments
             </Button>
           </div>
@@ -264,8 +264,8 @@ const BookAppointment = () => {
                       "rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors",
                       !available &&
                         "cursor-not-allowed border-red-200 bg-red-50 text-red-600 opacity-70",
-                      available && timeSlot !== slot && "border-emerald-200 bg-emerald-50/20 text-emerald-700 hover:border-emerald-400 hover:bg-emerald-50",
-                      available && timeSlot === slot && "border-violet-600 bg-violet-600 text-white"
+                      available && timeSlot !== slot && "border-blue-200 bg-blue-50/20 text-blue-700 hover:border-blue-400 hover:bg-blue-50",
+                      available && timeSlot === slot && "border-blue-600 bg-blue-600 text-white"
                     )}
                   >
                     {slot}
@@ -274,13 +274,13 @@ const BookAppointment = () => {
               </div>
               <div className="mt-2 flex gap-4 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1">
-                  <span className="h-2.5 w-2.5 rounded-full border border-emerald-200 bg-emerald-50/20" /> Free
+                  <span className="h-2.5 w-2.5 rounded-full border border-blue-200 bg-blue-50/20" /> Free
                 </span>
                 <span className="flex items-center gap-1">
                   <span className="h-2.5 w-2.5 rounded-full border border-red-200 bg-red-50" /> Booked
                 </span>
                 <span className="flex items-center gap-1">
-                  <span className="h-2.5 w-2.5 rounded-full bg-violet-600" /> Selected
+                  <span className="h-2.5 w-2.5 rounded-full bg-blue-600" /> Selected
                 </span>
               </div>
             </div>
@@ -300,7 +300,7 @@ const BookAppointment = () => {
           <Button
             type="submit"
             size="lg"
-            className="w-full bg-violet-600 hover:bg-violet-700"
+            className="w-full bg-blue-600 hover:bg-blue-700"
             disabled={submitting || !doctorId || !date || !timeSlot}
           >
             {submitting ? "Booking..." : "Confirm Appointment"}
